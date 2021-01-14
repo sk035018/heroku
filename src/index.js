@@ -8,6 +8,10 @@ const users = {};
 
 app.use(express.static("public"));
 
+app.get('/', (req, res) => {
+    res.sendFile('/index.html');
+})
+
 io.on("connect", (socket) => {
   const user = `user${uid}`;
   users[user] = socket.id;
