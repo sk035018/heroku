@@ -1,12 +1,16 @@
 const express = require("express");
-
+const path = require('path');
 const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 let uid = 1;
 const users = {};
 
-app.use(express.static("public"));
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './../public/index.html'));
+});
 
 io.on("connect", (socket) => {
   const user = `user${uid}`;
