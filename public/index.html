@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Server</title>
+
+  </head>
+  <body style="text-align: center; background-color: rgb(17, 15, 15); color: cornsilk; font-family: Georgia, 'Times New Roman', Times, serif;">
+    <div style="width: auto; border: solid teal 5px; margin: 25px; padding: 30px;">
+      <h1>Welcome to Chat</h1>
+      <input id="to" placeholder="Type Username to send message" style="background-color: rgb(17, 15, 15); width: 300px; padding: 10px; color: cornsilk;"/><br /><br />
+      <input id="message" placeholder="Type your message here" style="background-color: rgb(17, 15, 15); width: 300px; padding: 10px; color: cornsilk;"/><br /><br />
+      <button style="background-color: rgb(17, 15, 15); width: 300px; padding: 10px; color: cornsilk;" onclick="clickHandle()">Send</button>
+    </div>
+    <div style="width: auto; border: solid teal 5px; margin: 25px; padding: 30px;">
+      <h3>Your Chats are Here...</h3>
+      <pre id="display"></pre>
+    </div>
+    <div style="width: auto; border: solid teal 5px; margin: 25px; padding: 30px;">
+      <h3>Users online...</h3>
+      <pre id="online"></pre>
+    </div>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/socket.js"></script>
+</html>
