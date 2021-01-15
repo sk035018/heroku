@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './../public/index.html'));
 });
 
+app.get('/', (req, res) => {
+    res.sendFile('/index.html');
+})
+
 io.on("connect", (socket) => {
   const user = `user${uid}`;
   users[user] = socket.id;
