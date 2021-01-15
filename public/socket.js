@@ -9,11 +9,16 @@ const clickHandle = () => {
     
     socket.emit('newMessage', {to: to.value, message: message.value});
 
-    display.innerHTML = `${display.innerHTML}\nMe : ${message.value}`;
+    display.innerHTML = `${display.innerHTML}\nMe to ${to.value} : ${message.value}`;
 
     message.value = '';
 
 };
+
+const keyHandle = (event) => {
+  if(event.code === 'Enter')
+    clickHandle();
+}
 
 socket.on('noUser', (message) => {
     display.innerHTML = `${display.innerHTML}\n${message}`;
